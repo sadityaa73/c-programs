@@ -31,7 +31,7 @@ int main()
      cin>>setw(4)>>str;
      cout<<str;
 
-use of cascading operator:
+//use of cascading operator:
 
 int h1,h2;
 
