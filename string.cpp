@@ -15,7 +15,7 @@ int main()
     // cout<<str1+str2<<endl;
     cout<<str1.conact(str2)<<endl;
 
-    finding vowels :
+    //finding vowels :
     string str1;
     cout<<"enter the string :-\t";
     getline(cin,str1);
@@ -29,7 +29,7 @@ int main()
     }
     cout<<"total number of vowels in the string are:-\t:"<<vowels<<endl;
     
-    finding consonents:
+    //finding consonents:
     string str1;
     cout<<"enter the string :-\t";
     getline(cin,str1);
