@@ -12,7 +12,8 @@ class employee{
 class male_employee:public employee{
     public:
      string name;
-
+   
+   //member funciton defination inside the class:
      int set_details(string name,int phone_number,string address,int salary)
      {
         this->name = name;
@@ -29,7 +30,13 @@ class male_employee:public employee{
         cout<<"address of the employee:-"<<" "<<address<<endl;
         cout<<"salary of the employee:-"<<" "<<salary<<endl;
      }
+     void outside_funciton();
 };
+
+void male_employee::outside_funciton(){
+ cout<<"creating funciton outside the class"<<endl;
+ cout<<"outside class member funciton called"<<endl;
+}
 
 int main()
 {
@@ -47,5 +54,6 @@ int main()
 
     emp_1.set_details(name,phone_number,address,salary);
     emp_1.display();
+    emp_1.outside_funciton();
     return 0;
 }
