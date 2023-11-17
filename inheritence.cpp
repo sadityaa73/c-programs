@@ -33,6 +33,7 @@ class male_employee:public employee{
      void outside_funciton();
 };
 
+//defineing class member funciton outside the class:
 void male_employee::outside_funciton(){
  cout<<"creating funciton outside the class"<<endl;
  cout<<"outside class member funciton called"<<endl;
