@@ -15,12 +15,6 @@ int linearSearch(int n, int key, int arr[])
     }
     return -1;
 }
-
-int binarySearch(int array[], int n)
-{
-    return 0;
-};
-
 int main()
 {
     int n, key;
@@ -47,6 +41,5 @@ int main()
     cin >> key;
 
     linearSearch(n, key, arr);
-    binarySearch(arr, n);
     return 0;
 }
