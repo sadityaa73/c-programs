@@ -1,45 +1,64 @@
-#include<iostream>
+#include <iostream>
+#include <string>
 using namespace std;
+
+void display(int arr[], int size, string props)
+{
+    cout << "display array " << props << "sorting:" << endl;
+    cout << "[";
+    for (int i = 0; i <= size - 1; i++)
+    {
+        cout << arr[i];
+        if (i != size - 1)
+            cout << ",";
+    }
+    cout << "]";
+}
+
+int selectionSort(int arr[], int size)
+{
+    int count = 0;
+    while (count < size)
+    {    
+        int min = arr[count];
+        int temp;
+        cout<<"min "<<min<<endl;
+        for (int i = count; i <= size - 1; i++)
+        {
+            if (min > arr[i])
+            {
+                 temp = arr[i];
+                 arr[i] = min;
+                 min = temp;
+            }
+        }
+        arr[count] = min;
+
+        cout<<"element "<<arr[count]<<endl;
+        cout<<endl;
+        count++;
+    }
+    display(arr, size, "after");
+    return 0;
+}
 
 int main()
 {
-    int arr[10],n,max=0;
-    cout<<"enter the size of array:-\t";
-    cin>>n;
-    for(int i=0;i <= n-1;i++)
-    {
-       cout<<"enter the element of array:-\t";
-       cin>>arr[i];
-    }
-    cout<<"you final array is" <<endl;
-    for(int j=0;j <= n-1;j++){
-        cout<<arr[j]<<",";
-    }
-    cout<<endl;
-   
-   //print the sorted array:
+    int size;
+    cout << "enter the size of array:-";
+    cin >> size;
 
-   for(int i=0;i<=n-1;i++)
-   {
-    for(int j=i+1;j<n;j++)
+    int arr[size];
+    for (int i = 0; i <= size - 1; i++)
     {
-        if(arr[i]>arr[j])
-        {
-            int temp;
-            temp = arr[j];
-            cout<<"temp"<<temp<<endl;
-            arr[j] = arr[i];
-            cout<<"arr[j]"<<arr[j]<<endl;
-            arr[i] = temp;
-            cout<<"arr[i]"<<arr[i]<<endl;
-        }
+        cout << "enter the "
+             << " " << i << " "
+             << "element of an array:-\t";
+        cin >> arr[i];
     }
-   }
-   cout<<"sorted array is :-\t";
-   for(int i=0;i<=n-1;i++)
-   {
-    cout<<arr[i]<<",";
-   }
-    
+
+    display(arr, size, "before");
+    cout << endl;
+    selectionSort(arr, size);
     return 0;
 }
