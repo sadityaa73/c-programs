@@ -50,6 +50,35 @@ int insertAtMid(int arr[],int& size,int element)
     display(arr,size);
     return 0;
 }
+
+int deleteAtStart(int arr[],int& size)
+{
+    for(int i=0;i<=size-1;i++)
+    {
+        arr[i] = arr[i+1];
+    }
+    size--;
+    display(arr,size);
+    return 0;
+}
+
+int deleteAtEnd(int arr[],int& size)
+{
+    size--;
+    display(arr,size);
+    return 0;
+}
+int deleteAtMid(int arr[],int& size)
+{
+    int start=0,end = size-1,mid=(start+end)/2;
+    for(int i=mid;i<=size-1;i++)
+    {
+        arr[i] = arr[i+1];
+    }
+    size--;
+    display(arr,size);
+    return 0;
+}
 int main()
 {
     int arr[Max_Size]={2,6,8,4};
@@ -61,5 +90,8 @@ int main()
     insertAtEnd(arr,size,22);
     insertAtEnd(arr,size,34);
     insertAtMid(arr,size,55);
+    deleteAtStart(arr,size);
+    deleteAtEnd(arr,size);
+    deleteAtMid(arr,size);
     return 0;
 }
